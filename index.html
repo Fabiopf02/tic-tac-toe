@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Fábio França">
+    <meta name="keywords" content="tic-tac-toe, tic tac toe, jogo, jogo da velha">
+    <meta name="description" content="Uma versão do Jogo Tic Tac Toe, com algumas funcionalidades e animações a mais.">
+    <meta name="theme-color" content="#282a36">
+    <link rel="shortcut icon" type="img/jpg" href="assets/favicon.jpg">
+</head>
+<body>
+    <div class="container">
+        <section class="lateral">
+            <button class="btn-config">
+            </button>
+
+            <div class="game-mode">
+                <h2>Game Mode:</h2>
+                <div class="modes">
+                    <div class="mode">
+                        <strong>Robot</strong>
+                        <input type="radio" name="mode" onchange="setMode(this)" value="robot" checked>
+                    </div>
+                    <div class="mode">
+                        <strong>2 Players</strong>
+                        <input type="radio" name="mode" onchange="setMode(this)" value="player2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="scores">
+                <h2>Score:</h2>
+                <div class="players">
+                    <div class="player" id="player1">
+                        <strong class="name">Player1:</strong>
+                        <strong class="nscore"></strong>
+                    </div>
+                    <div class="player alter" id="robot">
+                        <strong class="name">Robot:</strong>
+                        <strong class="nscore"></strong>
+                    </div>
+                    <div class="player" id="Empate">
+                        <strong class="name">Empates:</strong>
+                        <strong class="nscore"></strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="next-player">
+                <p>Vez de `<strong></strong></strong>` jogar</p>
+            </div>
+        </section>
+
+        <section class="game">
+            <ul>
+            <li id="i0" onclick="changePlayed(this, 'player1')" class="m">
+                <div class="t"></div>
+            </li>
+            <li id="i1" onclick="changePlayed(this, 'player1')" class="m">
+                <div class="t"></div>
+            </li>
+            <li id="i2" onclick="changePlayed(this, 'player1')" class="m">
+                <div class="t"></div>
+            </li>
+            <li id="i3" onclick="changePlayed(this, 'player1')" class="m">
+                <div class="t"></div>
+            </li>
+            <li id="i4" onclick="changePlayed(this, 'player1')" class="m">
+                <div class="t"></div>
+            </li>
+            <li id="i5" onclick="changePlayed(this, 'player1')" class="m">
+                <div class="t"></div>
+            </li>
+            <li id="i6" onclick="changePlayed(this, 'player1')" class="m">
+                <div class="t"></div>
+            </li>
+            <li id="i7" onclick="changePlayed(this, 'player1')" class="m">
+                <div class="t"></div>
+            </li>
+            <li id="i8" onclick="changePlayed(this, 'player1')" class="m">
+                <div class="t"></div>
+            </li>
+            </ul>
+
+            <span class="line-to-winner"></span>
+        </section>
+    </div>
+
+    <div class="box finish-game">
+        <strong class="title">Fim de jogo</strong>
+        <div class="content row"></div>
+        <button 
+            class="btn bg-success" 
+            onclick="restartGame()"
+            style="position: absolute; bottom: 10px;left: auto;right: auto;margin: auto;"
+        >Jogar novamente</button>
+    </div>
+
+    <div class="fc"></div>
+
+    <div class="box config">
+        <strong class="title">Configurações</strong>
+        <div class="content col">
+            <div>
+                <strong>Mostrar marcador</strong>
+                <span><input type="checkbox" name="showmarker" onchange="changeConfig(this)"></span>
+            </div>
+            <div class="row">
+                <span style="font-size: 16px;"><strong>Dark Mode &nbsp;</strong></span>
+                <label class="switch">
+                    <input type="checkbox" name="switch" onchange="changeElement(this)" checked>
+                    <span class="sw"></span>
+                </label>
+            </div>
+            <div>
+                <button 
+                    class="btn bg-danger fg-light"
+                    onclick="cleanScore()"
+                >Excluir pontuações</button>
+            </div>
+        </div>
+
+        <button 
+            class="btn fg-danger"
+            id="save-config"
+            style="position: absolute;bottom: 15px;right: 15px;z-index: 3;"
+        >Fechar
+        </button>
+    </div>
+
+    <div class="cursor-marker" id="cursor-marker">
+        +
+    </div>
+
+    <script src="./js/main.mjs" type="module"></script>
+    <script src="./js/config.mjs" type="module"></script>
+    <script src="./js/robot.mjs" type="module"></script>
+    <script src="./js/theme.mjs" type="module"></script>
+    <script src="./js/others.mjs" type="module"></script>
+    <script src="./js/player.mjs" type="module"></script>
+
+</body>
+</html>
