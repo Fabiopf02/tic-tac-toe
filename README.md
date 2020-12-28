@@ -1,7 +1,6 @@
 # tic-tac-toe
 
-This is a simple game made in html, css and javascript. You can test 
-* [here](https://fabiopf02.github.io/tic-tac-toe) *.
+This is a simple game made in html, css and javascript. You can test **[here](https://fabiopf02.github.io/tic-tac-toe)**.
 
 <p align="center">
   <a href="https://fabiopf02.github.io/tic-tac-toe" target="_blank">
